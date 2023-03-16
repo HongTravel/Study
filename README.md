@@ -2,7 +2,8 @@
 
 <h4> Responsive webpage where you can search cafes and libraries suitable for studying, </h4>
 <h4> check usage information, and leave comments and ratings. </h4>
-
+<br />
+<br />
 <h4> Technology Stack </h4>
 
 <h5> Front-end : React JavaScript </h5>
