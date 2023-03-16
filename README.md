@@ -1,6 +1,7 @@
 <h2> Study </h2>
 
-<h4> Responsive webpage where you can search cafes and libraries suitable for studying, check usage information, and leave comments and ratings. </h4>
+<h4> Responsive webpage where you can search cafes and libraries suitable for studying, </h4>
+<h4> check usage information, and leave comments and ratings. </h4>
 
 <h4> Technology Stack </h4>
 
