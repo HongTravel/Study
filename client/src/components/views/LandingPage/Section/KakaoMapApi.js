@@ -76,10 +76,19 @@ function KakaoMapApi(props){
           center: new kakao.maps.LatLng(37.552635722509,126.92436042413), // 지도의 중심좌표
           level: 7, // 지도의 확대 레벨
         };
+
+        var mapBound = new kakao.maps.LatLngBounds(
+           new kakao.maps.LatLng(37.547457, 126.895522),
+           new kakao.maps.LatLng(37.585440, 126.943767)
+        );
+
+
     
         const map = new kakao.maps.Map(mapContainer, mapOption);
         const customOverlay = new kakao.maps.CustomOverlay({});
-    
+          
+        map.setBounds(mapBound);
+          
         const displayArea = (coordinates, name) => {
           let path = [];
           let points = [];

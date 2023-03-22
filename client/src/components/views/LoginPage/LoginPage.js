@@ -19,13 +19,27 @@ function LoginPage(){
 
     function movetoMain()
     {
-        Axios.post("http://localhost:8000/users/login",{
-            email,
-            password
-        }.then(res => console.log(res))
-        .then(console.log("server connected")))
-
         alert("로그인 성공!");
+
+        const formData = new FormData();
+        formData.append('email',email);
+        formData.append('password',password);
+
+        const xhr = new XMLHttpRequest()
+        xhr.open('POST','http://127.0.0.1:8000/users/login');
+        xhr.setRequestHeader('Content-Type','multipart/form-data');
+        xhr.send(formData);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    console.log('서버 전송 완료');
+                }
+                else{
+                    console.log('서버 전송 실패');
+                }
+            }
+        }
+
 
         window.location.href="/study";
     }
