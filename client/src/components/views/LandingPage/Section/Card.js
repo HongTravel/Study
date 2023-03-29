@@ -75,7 +75,7 @@ function Card({img = "", title = "", text = ""})
 {
     return(
         <StyledCard className = "card-item">
-            <div calssName = "card-image-wrapper">
+            <div className = "card-image-wrapper">
                 <img className = "card-img" src={img} alt = "샘플" />
             </div>
             <div className = "card-content">
