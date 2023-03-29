@@ -22,16 +22,29 @@ function RegisterPage() {
     }
 
 
-    function movetoLogin()
-    {
-        Axios.post("http://127.0.0.1:8000/users/register",{
-            name,
-            email,
-            password,
-        }.then(res=> console.log(res))
-        .then(console.log("server connected")))
-
+    function movetoLogin(event)
+    {   event.preventDefault();
         alert(`환영합니다. ${name}님!`);
+
+        const formData = new FormData();
+        formData.append('name',name);
+        formData.append('email',email);
+        formData.append('password',password);
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST','http://127.0.0.1:8000/users/register');
+        xhr.setRequestHeader('Content-Type','multipart/form-data');
+        xhr.send(formData);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === XMLHttpRequest.DONE){
+                if(xhr.status === 200){
+                    console.log('서버 전송 완료');
+                }
+                else {
+                    console.log('서버 전송 실패');
+                }
+            }
+        }
 
          window.location.href="/login";
     }
